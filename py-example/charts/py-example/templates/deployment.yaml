@@ -22,4 +22,7 @@ spec:
         ports:
         - containerPort: {{ .Values.service.internalPort }}
         resources:
+        env:
+          - name: extra_data
+            value: "{{ .Values.extra_data }}"
 {{ toYaml .Values.resources | indent 12 }}
